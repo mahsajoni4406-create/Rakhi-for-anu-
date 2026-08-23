@@ -1,0 +1,695 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #ff6f91,
+        #ff8fab,
+        #ffc2d1
+    );
+
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+
+    animation: pageIn 0.7s ease;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card,
+.letter-card,
+.gift-card,
+.surprise-card {
+
+    width: min(92vw, 650px);
+
+    padding: 45px 35px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 25px 70px rgba(120, 20, 60, 0.25);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.card h1,
+.letter-card h1,
+.gift-card h1,
+.surprise-card h1 {
+    font-size: clamp(28px, 6vw, 48px);
+
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+}
+
+.card h1 span {
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 18px;
+
+    opacity: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.emoji {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.big-heart {
+    font-size: 70px;
+
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    padding: 15px 28px;
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+.yes-btn,
+.main-btn {
+    background: white;
+
+    color: #e84a73;
+
+    box-shadow:
+        0 10px 25px rgba(100, 0, 40, 0.2);
+}
+
+.no-btn {
+    background: rgba(255, 255, 255, 0.35);
+
+    color: white;
+
+    position: relative;
+}
+
+.main-btn {
+    min-width: 190px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   HAND PHOTO
+========================= */
+
+.rakhi-card {
+    max-width: 700px;
+}
+
+.hand-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    margin: 25px auto;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hand-wrapper img {
+    width: 100%;
+
+    display: block;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.hand-wrapper img.changing {
+    opacity: 0;
+
+    transform: scale(1.04);
+}
+
+.hand-wrapper img.changed {
+    animation: imageReveal 1s ease;
+}
+
+@keyframes imageReveal {
+    from {
+        opacity: 0;
+
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+.sparkles {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 65px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.sparkles.show {
+    animation: sparkle 1.5s ease;
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-card {
+    background: rgba(255, 247, 250, 0.94);
+
+    color: #6b3045;
+
+    text-align: left;
+}
+
+.letter-card h1 {
+    text-align: center;
+
+    color: #e84a73;
+
+    font-size: clamp(25px, 5vw, 40px);
+}
+
+.letter-decoration {
+    text-align: center;
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    line-height: 1.75;
+
+    font-size: 16px;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 17px;
+}
+
+.signature strong {
+    font-size: 22px;
+
+    color: #e84a73;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift-card {
+    min-height: 500px;
+}
+
+.gift-box {
+    width: 180px;
+
+    height: 180px;
+
+    margin: 35px auto;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    transition: 0.7s ease;
+}
+
+.box-body {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 180px;
+
+    height: 130px;
+
+    background: linear-gradient(
+        135deg,
+        #e63968,
+        #ff6f91
+    );
+
+    border-radius: 0 0 15px 15px;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.box-lid {
+    position: absolute;
+
+    top: 20px;
+
+    left: -8px;
+
+    width: 196px;
+
+    height: 45px;
+
+    background: #d92f5d;
+
+    border-radius: 10px;
+
+    z-index: 5;
+
+    transition: 0.8s ease;
+}
+
+.ribbon-vertical {
+    position: absolute;
+
+    left: 75px;
+
+    width: 30px;
+
+    height: 100%;
+
+    background: #ffd166;
+}
+
+.ribbon-horizontal {
+    position: absolute;
+
+    top: 45px;
+
+    width: 100%;
+
+    height: 30px;
+
+    background: #ffd166;
+}
+
+.gift-box.open .box-lid {
+    transform:
+        translateY(-75px)
+        rotate(-10deg);
+}
+
+.gift-message {
+    display: none;
+
+    animation: pageIn 0.8s ease;
+}
+
+.gift-message.show {
+    display: block;
+}
+
+.empty-box {
+    font-size: 80px;
+
+    margin: 15px;
+}
+
+.empty-text {
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-card {
+    background: rgba(255, 255, 255, 0.2);
+
+    overflow: hidden;
+}
+
+.surprise-card h1 {
+    font-size: clamp(35px, 8vw, 60px);
+
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+.surprise-subtitle {
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+.surprise-image {
+    width: 100%;
+
+    max-width: 520px;
+
+    border-radius: 25px;
+
+    display: block;
+
+    margin: 0 auto 25px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.3);
+
+    animation: surpriseImage 0.9s ease;
+}
+
+@keyframes surpriseImage {
+    from {
+        opacity: 0;
+
+        transform: scale(0.7)
+                   rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1)
+                   rotate(0);
+    }
+}
+
+.surprise-card h2 {
+    font-size: clamp(21px, 5vw, 30px);
+
+    margin-bottom: 15px;
+}
+
+.final-text {
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+.final-hearts {
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.6;
+
+    animation: floatUp linear infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    animation-duration: 8s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-duration: 11s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 45%;
+    animation-duration: 7s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 65%;
+    animation-duration: 10s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 82%;
+    animation-duration: 8s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 92%;
+    animation-duration: 12s;
+}
+
+@keyframes floatUp {
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 15px;
+    }
+
+    .card,
+    .letter-card,
+    .gift-card,
+    .surprise-card {
+        padding: 30px 20px;
+
+        border-radius: 25px;
+    }
+
+    .letter {
+        padding: 18px;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    button {
+        padding: 13px 22px;
+
+        font-size: 15px;
+    }
+
+    .hand-wrapper img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .gift-box {
+        transform: scale(0.9);
+    }
+  }
