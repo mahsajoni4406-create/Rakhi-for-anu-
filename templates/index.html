@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Bristy 💙</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <span>💙</span>
+        <span>💖</span>
+        <span>✨</span>
+        <span>❤️</span>
+        <span>🫶</span>
+        <span>💫</span>
+    </div>
+
+
+    <!-- PAGE 1 -->
+    <section id="welcomePage" class="page active">
+
+        <div class="card">
+
+            <div class="emoji">🥹💙</div>
+
+            <h1>Remember what’s special today?</h1>
+
+            <p class="subtitle">
+                Think carefully, dear sister...
+            </p>
+
+            <div class="buttons">
+                <button id="noBtn" class="no-btn">
+                    No 😭
+                </button>
+
+                <button id="yesBtn" class="yes-btn">
+                    Yes 💙
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+    <section id="greetingPage" class="page">
+
+        <div class="card">
+
+            <div class="big-heart">
+                💙
+            </div>
+
+            <h1>
+                Happy Raksha Bandhan,
+                <span>Bristy!</span>
+            </h1>
+
+            <p class="subtitle">
+                Happy Raksha Bandhan, Dear Sister! 🥹❤️
+            </p>
+
+            <button id="continueBtn" class="main-btn">
+                Continue 💙
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3 -->
+    <section id="rakhiPage" class="page">
+
+        <div class="card rakhi-card">
+
+            <h1>
+                Put a Rakhi on me 🥺❤️
+            </h1>
+
+            <p class="subtitle">
+                Come on, tie the Rakhi!
+            </p>
+
+            <div class="hand-wrapper">
+
+                <img
+                    id="handImage"
+                    src="{{ url_for('static', filename='hand.jpg') }}"
+                    alt="My hand"
+                >
+
+                <div id="sparkles" class="sparkles">
+                    ✨
+                </div>
+
+            </div>
+
+            <button id="rakhiBtn" class="main-btn">
+                Rakhi Tied! ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 4 -->
+    <section id="letterPage" class="page">
+
+        <div class="letter-card">
+
+            <div class="letter-decoration">
+                💌
+            </div>
+
+            <h1>Happy Raksha Bandhan, Bristy! 💙</h1>
+
+            <div class="letter">
+
+                <p>
+                    Amader ager moto hoyto ekhon ar kotha hoy na,
+                    onek kichu change hoye geche. Tobuo ami asa kori
+                    tumi bhalo acho, happy acho.
+                </p>
+
+                <p>
+                    Tar sathe—tumi age amar kache joto ta special chila,
+                    ekhono thik toto tai acho, ar chirokal thakbe.
+                    Somoy, distance ba kotha kom hoye jawa konotai
+                    ei bondhonta change korte parbe na.
+                </p>
+
+                <p>
+                    Jokhon e tomar kono kichu dorkar porbe,
+                    kono problem hobe just remember you've got a brother.
+                    Ami shobshomoy tomar pase achi and thakbo! ❤️‍🩹
+                </p>
+
+                <p>
+                    Take care of yourself and always keep smiling.
+                </p>
+
+                <div class="signature">
+                    <span>Your brother,</span>
+                    <strong>Ashahid</strong>
+                </div>
+
+            </div>
+
+            <button id="giftBtn" class="main-btn gift-button">
+                🎁 Open Your Gift
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 5 -->
+    <section id="giftPage" class="page">
+
+        <div class="gift-card">
+
+            <h1>Here's your gift 🎁</h1>
+
+            <p class="subtitle">
+                You deserve something special...
+            </p>
+
+            <div id="giftBox" class="gift-box">
+
+                <div class="box-lid"></div>
+
+                <div class="box-body">
+                    <div class="ribbon-vertical"></div>
+                    <div class="ribbon-horizontal"></div>
+                </div>
+
+            </div>
+
+            <button id="openGiftBtn" class="main-btn">
+                Open It 🎁
+            </button>
+
+            <div id="giftMessage" class="gift-message">
+
+                <p>
+                    Here's your gift...
+                </p>
+
+                <div class="empty-box">
+                    😭
+                </div>
+
+                <p class="empty-text">
+                    Wait... it's empty?! 😂
+                </p>
+
+                <button id="surpriseBtn" class="main-btn surprise-btn">
+                    One More Surprise 👀
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 6 -->
+    <section id="surprisePage" class="page">
+
+        <div class="surprise-card">
+
+            <div class="confetti">🎉</div>
+
+            <h1>
+                GOTCHA! 😭😂
+            </h1>
+
+            <p class="surprise-subtitle">
+                You really thought there was money inside? 😂
+            </p>
+
+            <img
+                src="{{ url_for('static', filename='surprise.jpg') }}"
+                alt="Funny surprise"
+                class="surprise-image"
+            >
+
+            <h2>
+                Love is more valuable than money. ❤️‍🩹
+            </h2>
+
+            <p class="final-text">
+                Happy Raksha Bandhan, dear sister! 💙
+            </p>
+
+            <div class="final-hearts">
+                🫶 💙 🥹 ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
